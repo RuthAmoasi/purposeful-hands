@@ -1,15 +1,3 @@
-:root {
-  --primary-color: #ad5e2f;
-  /*important buttons, logo accents, highlights, active states*/
-  --accent-color: #d4a574;
-  /*hover effects, subtle highlights, decorative elements, small UI details*/
-  --background-color: #f6efe7;
-  --background-color-rgb: 246, 239, 231;
-  --text-color: #5a321e;
-  /* --secondary-color: #fff;
-    --font-family: 'Arial, sans-serif'; */
-}
-
 .navbar {
   position: sticky;
   top: 0;
