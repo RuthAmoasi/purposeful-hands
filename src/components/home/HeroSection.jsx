@@ -15,8 +15,8 @@ function HeroSection() {
   };
 
   return (
-    <div className="hero-wrapper">
-      <div className="hero-section" onMouseMove={handleMouseMove}>
+    <section className="hero-section" onMouseMove={handleMouseMove}>
+      <div className="hero-section-container container">
         <div className="hero-content">
           <h1>Crafting Purpose with Every Hand</h1>
           <p>
@@ -40,7 +40,7 @@ function HeroSection() {
           <img src={heroImage} alt="Handmade Bead and Crochet Creations" />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

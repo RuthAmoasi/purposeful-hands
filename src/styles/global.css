@@ -5,14 +5,20 @@
   font-family: "Arial, sans-serif";
 }
 
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
 :root {
   --primary-color: #ad5e2f;
   /*important buttons, logo accents, highlights, active states*/
   --accent-color: #d4a574;
+  --accent-color-rgb: 212, 165, 116;
   /*hover effects, subtle highlights, decorative elements, small UI details*/
   --background-color: #f6efe7;
   --background-color-rgb: 246, 239, 231;
-  --text-color: #5a321e;
+  --text-color: rgb(90, 50, 30);
   /* --secondary-color: #fff;
     --font-family: 'Arial, sans-serif'; */
   --footer-gradient-end: #8b5f49;
