@@ -1,0 +1,220 @@
+.home-services-section {
+  border-bottom: 1px dashed rgba(var(--accent-color-rgb), 0.5);
+  width: 100%;
+  /* background: linear-gradient(to bottom, #f9f3ea, #f5eadc); */
+  background: linear-gradient(to bottom, #f5eadc, #efe3d3);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-services-section::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 280px;
+  height: 280px;
+
+  background: radial-gradient(
+    circle,
+    rgba(212, 165, 116, 0.25),
+    transparent 70%
+  );
+
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.home-services-section::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+
+  background: radial-gradient(circle, rgba(139, 95, 73, 0.2), transparent 70%);
+
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.home-services-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.home-services-container h2 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.home-services-container h2::before,
+.home-services-container h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
+}
+.home-services-container h2::before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.home-services-container h2::after {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.home-services-subtext {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.home-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.home-service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    rgba(212, 165, 116, 0.15),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.home-service-card:hover::before {
+  opacity: 1;
+}
+
+.home-service-card {
+  background: linear-gradient(to bottom, #ffffff, #fdf8f3);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  grid-template-areas: "text image";
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.home-service-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.home-service-card:nth-child(even) {
+  grid-template-columns: 150px 1fr;
+  grid-template-areas: "image text";
+}
+
+.home-service-card:nth-child(even) .home-service-card-image {
+  order: -1;
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.home-service-card-text {
+  grid-area: text;
+}
+
+.home-service-card-text h3 {
+  margin-bottom: 10px;
+}
+
+.home-service-card-text p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(var(--text-color), 0.75);
+}
+
+.home-service-card-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  margin-left: 10px;
+  grid-area: image;
+}
+
+.home-service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.home-service-card:hover img {
+  transform: scale(1.05);
+}
+
+.home-services-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.home-services-btn:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .home-service-card {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "text"
+      "image" !important;
+    text-align: center;
+  }
+
+  .home-service-card-image,
+  .home-service-card:nth-child(even) .home-service-card-image {
+    margin: 15px auto 0;
+    width: 80%;
+    height: 180px;
+  }
+
+  .home-service-card:nth-child(even) {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "text"
+      "image" !important;
+  }
+}
