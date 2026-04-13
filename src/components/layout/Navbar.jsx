@@ -88,7 +88,9 @@ function Navbar() {
           </NavLink>
         </li>
       </ul>
-      <button className="get-involved">Get Involved</button>
+      <button className="navbar-get-involved btn btn-primary">
+        Get Involved
+      </button>
     </nav>
   );
 }

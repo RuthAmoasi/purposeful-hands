@@ -3,13 +3,18 @@ import aboutImage from "../../assets/home/about-image2.png";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import useFadeInOnScroll from "../../hooks/useFadeInOnScroll";
-import { FaHandsHelping } from "react-icons/fa";
-import { FaPaintBrush } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa";
+import { FaHandsHelping, FaPaintBrush, FaUsers } from "react-icons/fa";
 
 function AboutSection() {
   const textRef = useRef(null);
 
+  const card1Ref = useRef(null);
+  const card2Ref = useRef(null);
+  const card3Ref = useRef(null);
+
+  const cardRefs = [card1Ref, card2Ref, card3Ref];
+
+  useFadeInOnScroll(cardRefs);
   useFadeInOnScroll(textRef);
 
   return (
@@ -21,23 +26,43 @@ function AboutSection() {
             <img src={aboutImage} alt="Crafting tools and materials" />
 
             <div className="home-about-cards">
-              <div className="home-about-card">
-                <FaHandsHelping size={50} className="impact-icon" />
+              <div ref={card1Ref} className="home-about-card card fade-in-up">
+                <FaHandsHelping
+                  size={50}
+                  className="impact-icon"
+                  aria-hidden="true"
+                />
                 <h4> 50+ Youth Trained</h4>
               </div>
 
-              <div className="home-about-card">
-                <FaPaintBrush size={50} className="impact-icon" />
+              <div
+                ref={card2Ref}
+                className="home-about-card card fade-in-up"
+                style={{ transitionDelay: "0.1s" }}
+              >
+                <FaPaintBrush
+                  size={50}
+                  className="impact-icon"
+                  aria-hidden="true"
+                />
                 <h4>Handmade Products Created</h4>
               </div>
 
-              <div className="home-about-card">
-                <FaUsers size={50} className="impact-icon" />
+              <div
+                ref={card3Ref}
+                className="home-about-card card fade-in-up"
+                style={{ transitionDelay: "0.2s" }}
+              >
+                <FaUsers size={50} className="impact-icon" aria-hidden="true" />
                 <h4>Community Impact</h4>
               </div>
             </div>
           </div>
-          <div ref={textRef} className="home-about-text fade-in-up">
+          <div
+            ref={textRef}
+            className="home-about-text fade-in-up"
+            style={{ transitionDelay: "0.3s" }}
+          >
             <h3>Empowering Creativity, Transforming Lives</h3>
             <p>
               Purposeful Hands is dedicated to creating different crafts in
@@ -45,7 +70,7 @@ function AboutSection() {
               with practical skills in these areas, creating opportunities for
               growth, creativity, and financial independence.
             </p>
-            <Link to="/about" className="learn-more-button">
+            <Link to="/about" className="learn-more-btn btn btn-primary">
               Learn More &rarr;
             </Link>
           </div>

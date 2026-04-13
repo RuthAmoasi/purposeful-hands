@@ -1,27 +1,34 @@
 import { useEffect } from "react";
 
-function useFadeInOnScroll(ref, threshold = 0.2) {
+function useFadeInOnScroll(refs) {
   useEffect(() => {
-    const element = ref.current;
-
-    if (!element) return;
+    const elements = Array.isArray(refs) ? refs : [refs];
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          element.classList.add("show");
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
       },
-      { threshold }
+      { threshold: 0.2 }
     );
 
-    observer.observe(element);
+    elements.forEach((ref) => {
+      if (ref?.current) {
+        observer.observe(ref.current);
+      }
+    });
 
     return () => {
-      observer.unobserve(element);
-      observer.disconnect();
+      elements.forEach((ref) => {
+        if (ref?.current) {
+          observer.unobserve(ref.current);
+        }
+      });
     };
-  }, [ref, threshold]);
+  }, [refs]);
 }
 
 export default useFadeInOnScroll;

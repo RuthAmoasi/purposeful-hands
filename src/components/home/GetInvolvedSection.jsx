@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 import "./GetInvolvedSection.css";
 import { HiUserGroup, HiHeart, HiUsers } from "react-icons/hi";
+import { useRef } from "react";
+import useFadeInOnScroll from "../../hooks/useFadeInOnScroll";
 
 function GetInvolvedSection() {
+  const card1Ref = useRef(null);
+  const card2Ref = useRef(null);
+  const card3Ref = useRef(null);
+
+  useFadeInOnScroll(card1Ref);
+  useFadeInOnScroll(card2Ref);
+  useFadeInOnScroll(card3Ref);
+
   return (
     <section className="home-get-involved-section">
       <div className="home-get-involved-container container">
@@ -12,7 +22,11 @@ function GetInvolvedSection() {
         </p>
 
         <div className="home-get-involved-grid">
-          <div className="home-get-involved-card">
+          <div
+            ref={card1Ref}
+            className="home-get-involved-card card glow-effect fade-in-up"
+            style={{ transitionDelay: "0.1s" }}
+          >
             <div className="home-get-involved-icon-wrapper">
               <HiUserGroup className="home-get-involved-icon" />
             </div>
@@ -24,7 +38,11 @@ function GetInvolvedSection() {
               skills.
             </p>
           </div>
-          <div className="home-get-involved-card">
+          <div
+            ref={card2Ref}
+            className="home-get-involved-card card glow-effect fade-in-up"
+            style={{ transitionDelay: "0.2s" }}
+          >
             <div className="home-get-involved-icon-wrapper">
               <HiHeart className="home-get-involved-icon" />
             </div>
@@ -35,7 +53,11 @@ function GetInvolvedSection() {
               and growth.
             </p>
           </div>
-          <div className="home-get-involved-card">
+          <div
+            ref={card3Ref}
+            className="home-get-involved-card card glow-effect fade-in-up"
+            style={{ transitionDelay: "0.3s" }}
+          >
             <div className="home-get-involved-icon-wrapper">
               <HiUsers className="home-get-involved-icon" />
             </div>
@@ -46,7 +68,10 @@ function GetInvolvedSection() {
             </p>
           </div>
         </div>
-        <Link to="/opportunities" className="home-get-involved-btn">
+        <Link
+          to="/opportunities"
+          className="home-get-involved-btn btn btn-primary"
+        >
           Learn More &rarr;
         </Link>
       </div>

@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Arial, sans-serif";
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -24,4 +24,103 @@ body {
   /* --secondary-color: #fff;
     --font-family: 'Arial, sans-serif'; */
   --footer-gradient-end: #8b5f49;
+
+  --section-padding: 60px 20px;
+  --section-padding-mobile: 40px 20px;
+
+  --card-padding: 20px;
+  --card-gap: 25px;
+
+  --border-radius: 15px;
+
+  --section-soft-background: linear-gradient(to bottom, #fffaf5, #f2e3d3);
+
+  --section-warm-background: linear-gradient(to bottom, #f5eadc, #efe3d3);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--section-padding);
+}
+
+.card {
+  background: linear-gradient(to bottom, #ffffff, #fdf8f3);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  padding: var(--card-padding);
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.glow-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle,
+    rgba(var(--primary-color-rgb), 0.2),
+    transparent 70%
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glow-effect:hover::before {
+  opacity: 1;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: var(--text-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.fade-in-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
