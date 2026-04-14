@@ -88,9 +88,9 @@ function Navbar() {
           </NavLink>
         </li>
       </ul>
-      <button className="navbar-get-involved btn btn-primary">
+      <Link to="/opportunities" className="navbar-get-involved btn btn-primary">
         Get Involved
-      </button>
+      </Link>
     </nav>
   );
 }
