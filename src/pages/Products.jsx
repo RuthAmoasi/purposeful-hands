@@ -1,5 +1,12 @@
-const Products = () => {
-  return <h1>Products Page</h1>;
-};
+import "./Products.css";
+import ProductsHero from "../components/products/ProductsHero";
+
+function Products() {
+  return (
+    <div className="products-page">
+      <ProductsHero />
+    </div>
+  );
+}
 
 export default Products;
