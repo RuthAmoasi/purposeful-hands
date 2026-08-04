@@ -3,6 +3,7 @@ import FounderStory from "../components/about/FounderStory";
 import MissionVision from "../components/about/MissionVision";
 import "./About.css";
 import WhatWeDo from "../components/about/WhatWeDo";
+import FutureGoals from "../components/about/FutureGoals";
 
 function About() {
   return (
@@ -11,6 +12,7 @@ function About() {
       <FounderStory />
       <MissionVision />
       <WhatWeDo />
+      <FutureGoals />
     </div>
   );
 }

@@ -1,0 +1,69 @@
+.future-goals-container {
+  background: linear-gradient(to right, #f5eadc, #efe3d3);
+  border-radius: var(--border-radius);
+  padding-left: 3rem;
+}
+
+.future-goals-container h4 {
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.future-goals-container h2 {
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.future-goals-intro {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+.future-goals-container ul {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.future-goals-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  max-width: 600px;
+}
+
+.future-goals-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.9rem;
+  line-height: 1.6;
+}
+
+.future-goals-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.future-goals-closing {
+  margin-top: 2rem;
+  font-style: italic;
+  max-width: 600px;
+  line-height: 1.6;
+  color: rgba(var(--text-color-rgb), 0.85);
+}
+
+@media (max-width: 768px) {
+  .future-goals-container {
+    padding: var(--section-padding-mobile);
+  }
+
+  .future-goals-list li {
+    padding-left: 1.5rem;
+  }
+}
