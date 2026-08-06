@@ -1,0 +1,127 @@
+/* Dark semi-transparent background covering the entire screen */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: overlayFade 0.35s ease;
+}
+
+/* The actual white box/window in the middle */
+.modal-content {
+  text-align: center;
+  position: relative;
+  background: linear-gradient(to bottom, #ffffff, #fdf8f3);
+  padding: 35px;
+  border-radius: 20px;
+  width: 550px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: modalFade 0.35s ease-out;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.modal-image {
+  width: auto;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.modal-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.modal-description {
+  color: rgba(var(--text-color-rgb), 0.85);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1px solid rgba(var(--text-color-rgb), 0.1);
+  margin: 30px 0;
+}
+
+.modal-order-section h3 {
+  margin-bottom: 10px;
+}
+
+.modal-order-section {
+  margin-top: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-whatsapp,
+.modal-form {
+  width: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--text-color);
+  border-radius: 50%;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(var(--primary-color-rgb), 0.1);
+  transform: scale(1.05);
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
