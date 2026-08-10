@@ -1,0 +1,255 @@
+.products-ordering-section {
+  background: var(--section-warm-background);
+}
+
+.products-ordering-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.products-ordering-heading {
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.products-ordering-subheading {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.products-ordering-subheading::before,
+.products-ordering-subheading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
+}
+
+.products-ordering-subheading::before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.products-ordering-subheading::after {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.products-ordering-text {
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  color: rgba(var(--text-color-rgb), 0.85);
+}
+
+/* Ordering steps */
+
+.products-ordering-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--card-gap);
+  width: 100%;
+}
+
+.products-ordering-step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 20px 25px;
+  text-align: center;
+
+  z-index: 1;
+}
+
+.products-ordering-step-card h3 {
+  margin: 18px 0 10px;
+  font-size: 1.2rem;
+}
+
+.products-ordering-step-card p {
+  color: rgba(var(--text-color-rgb), 0.8);
+  line-height: 1.7;
+}
+
+/* Icon */
+
+.ordering-step-card-icon-wrapper {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--primary-color-rgb), 0.25),
+    rgba(var(--primary-color-rgb), 0.1)
+  );
+
+  border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.products-ordering-step-card:hover .ordering-step-card-icon-wrapper {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(var(--primary-color-rgb), 0.16);
+}
+
+.ordering-step-card-icon {
+  color: var(--primary-color);
+  font-size: 2.3rem;
+
+  transition: transform 0.3s ease;
+}
+
+.products-ordering-step-card:hover .ordering-step-card-icon {
+  transform: scale(1.08);
+}
+
+/* WhatsApp + Form icons */
+
+.ordering-order-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ordering-order-icons .ordering-step-card-icon {
+  font-size: 1.8rem;
+}
+
+.ordering-step-card-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  margin-top: 10px;
+}
+
+/* Connecting arrows */
+
+.products-ordering-step-card:not(:last-child)::after {
+  content: "→";
+
+  position: absolute;
+
+  top: 50%;
+  right: -25px;
+
+  transform: translateY(-50%);
+
+  color: var(--primary-color);
+
+  font-size: 1.8rem;
+  font-weight: 400;
+
+  z-index: 2;
+}
+
+/* Bottom message */
+
+.products-ordering-last-text {
+  max-width: 600px;
+
+  line-height: 1.6;
+
+  margin: 50px auto 0;
+
+  color: rgba(var(--text-color-rgb), 0.85);
+
+  background: linear-gradient(
+    to right,
+    rgba(var(--primary-color-rgb), 0.1),
+    rgba(var(--primary-color-rgb), 0.05)
+  );
+
+  padding: 20px 30px;
+
+  border-radius: var(--border-radius);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .products-ordering-steps {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 70px;
+  }
+
+  .products-ordering-step-card::after {
+    display: none;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .products-ordering-container {
+    padding: var(--section-padding-mobile);
+  }
+
+  .products-ordering-subheading::before,
+  .products-ordering-subheading::after {
+    display: none;
+  }
+
+  .products-ordering-text {
+    margin-bottom: 60px;
+  }
+
+  .products-ordering-steps {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 70px;
+  }
+
+  .products-ordering-step-card {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .products-ordering-last-text {
+    margin-top: 50px;
+  }
+}
