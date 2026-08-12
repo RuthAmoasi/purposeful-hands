@@ -1,0 +1,145 @@
+.why-choose-us-section {
+  background: var(--section-soft-background);
+}
+
+.why-choose-us-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.why-choose-us-heading {
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.why-choose-us-subheading {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.why-choose-us-subheading::before,
+.why-choose-us-subheading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
+}
+
+.why-choose-us-subheading::before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.why-choose-us-subheading::after {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.why-choose-us-text {
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  color: rgba(var(--text-color-rgb), 0.85);
+}
+
+.why-choose-us-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--card-gap);
+  width: 100%;
+  max-width: 900px;
+}
+
+.why-choose-us-card {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+  gap: var(--card-gap);
+  padding: 25px 30px;
+  border: 1px solid rgba(var(--accent-color-rgb), 0.7);
+}
+
+.why-choose-us-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--text-color-rgb), 0.08);
+}
+
+.why-choose-us-card-text {
+  text-align: left;
+}
+
+.why-choose-us-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.why-choose-us-card p {
+  color: rgba(var(--text-color-rgb), 0.85);
+  line-height: 1.7;
+}
+
+.why-choose-us-icon {
+  color: var(--primary-color);
+  font-size: 50px;
+  margin: auto;
+  transition: transform 0.3s ease;
+}
+
+.why-choose-us-card:hover .why-choose-us-icon {
+  transform: scale(1.08);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .why-choose-us-container {
+    padding: var(--section-padding-mobile);
+  }
+
+  .why-choose-us-subheading::before,
+  .why-choose-us-subheading::after {
+    display: none;
+  }
+
+  .why-choose-us-card {
+    grid-template-columns: 70px 1fr;
+    gap: 20px;
+    padding: 25px 20px;
+  }
+
+  .why-choose-us-icon {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-choose-us-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .why-choose-us-card-text {
+    text-align: center;
+  }
+
+  .why-choose-us-icon {
+    margin: 0 auto;
+  }
+}
