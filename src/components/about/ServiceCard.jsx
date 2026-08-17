@@ -1,6 +1,6 @@
 import "./ServiceCard.css";
 
-function ServiceCard({ image, title, text }) {
+function ServiceCard({ image, title, text, status }) {
   return (
     <div className="service-card card">
       <img
@@ -12,6 +12,7 @@ function ServiceCard({ image, title, text }) {
       <div className="service-card-text">
         <h5>{title}</h5>
         <p>{text}</p>
+        {status && <span className="service-card-status">{status}</span>}
       </div>
     </div>
   );
