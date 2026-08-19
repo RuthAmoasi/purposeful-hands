@@ -2,6 +2,7 @@ import "./Services.css";
 import ServicesHero from "../components/services/ServicesHero";
 import ServicesIntro from "../components/services/ServicesIntro";
 import ServicesGrid from "../components/services/ServicesGrid";
+import ServicesCTA from "../components/services/ServicesCTA";
 
 function Services() {
   return (
@@ -9,6 +10,7 @@ function Services() {
       <ServicesHero />
       <ServicesIntro />
       <ServicesGrid />
+      <ServicesCTA />
     </div>
   );
 }

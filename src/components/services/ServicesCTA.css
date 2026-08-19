@@ -1,0 +1,94 @@
+.services-cta-section {
+  background: var(--section-warm-background);
+}
+
+.services-cta-container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.services-cta-content {
+  background: var(--primary-color);
+  color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 50px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.services-cta-label {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent-color);
+  color: var(--text-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.services-cta-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 15px;
+  color: var(--background-color);
+}
+
+.services-cta-content p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+  color: rgba(var(--background-color-rgb), 0.9);
+}
+
+.services-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.services-cta-buttons .btn {
+  min-width: 170px;
+}
+
+.services-cta-whatsapp {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.services-cta-whatsapp svg {
+  font-size: 1.2rem;
+}
+
+.services-cta-whatsapp:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .services-cta-container {
+    padding: var(--section-padding-mobile);
+  }
+
+  .services-cta-content {
+    padding: 40px 25px;
+  }
+
+  .services-cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .services-cta-buttons .btn {
+    width: 100%;
+  }
+}
