@@ -1,5 +1,12 @@
-const Opportunities = () => {
-  return <h1>Opportunities Page</h1>;
-};
+import "./Opportunities.css";
+import OpportunitiesHero from "../components/opportunities/OpportunitiesHero";
 
-export default Opportunities;
+function Services() {
+  return (
+    <div className="opportunities-page">
+      <OpportunitiesHero />
+    </div>
+  );
+}
+
+export default Services;

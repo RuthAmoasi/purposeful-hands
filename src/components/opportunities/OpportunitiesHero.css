@@ -1,0 +1,67 @@
+.opportunities-hero-section {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../assets/opportunities/opportunities-hero-img.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+}
+
+.opportunities-hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opportunities-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #ead8ca;
+  color: var(--primary-color);
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.opportunities-hero-text {
+  max-width: 650px;
+  color: var(--background-color);
+  text-align: center;
+}
+
+.opportunities-hero-text h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.opportunities-hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 550px;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .opportunities-hero-container {
+    padding-block: 70px;
+  }
+
+  .opportunities-hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .opportunities-hero-text p {
+    font-size: 1rem;
+  }
+}
