@@ -1,0 +1,109 @@
+.collaborate-with-us-section {
+  background: var(--section-soft-background);
+}
+
+.collaborate-with-us-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.collaborate-with-us-heading {
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.collaborate-with-us-subheading {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.collaborate-with-us-subheading::before,
+.collaborate-with-us-subheading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
+}
+
+.collaborate-with-us-subheading::before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.collaborate-with-us-subheading::after {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.collaborate-with-us-text {
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  color: rgba(var(--text-color-rgb), 0.85);
+}
+
+.collaborate-with-us-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--card-gap);
+  width: 100%;
+  max-width: 800px;
+}
+
+.collaborate-with-us-card {
+  text-align: left;
+  padding: 25px 30px;
+  border: 1px solid rgba(var(--accent-color-rgb), 0.7);
+}
+
+.collaborate-with-us-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--text-color-rgb), 0.08);
+}
+
+.collaborate-with-us-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.collaborate-with-us-card p {
+  color: rgba(var(--text-color-rgb), 0.85);
+  line-height: 1.7;
+}
+
+.collaborate-with-us-btn {
+  margin-top: 40px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .collaborate-with-us-container {
+    padding: var(--section-padding-mobile);
+  }
+
+  .collaborate-with-us-subheading::before,
+  .collaborate-with-us-subheading::after {
+    display: none;
+  }
+
+  .collaborate-with-us-card {
+    text-align: center;
+  }
+}
