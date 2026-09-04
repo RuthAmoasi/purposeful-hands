@@ -38,7 +38,7 @@ Thank you!`;
               Ask Us on WhatsApp
             </a>
 
-            <Link to="/contact" className="btn btn-secondary">
+            <Link to="/contact?interest=service" className="btn btn-secondary">
               Express Your Interest →
             </Link>
           </div>

@@ -51,7 +51,10 @@ function VolunteerWithUs() {
               impact.
             </p>
           </div>
-          <Link to="/contact" className="volunteer-btn btn btn-primary">
+          <Link
+            to="/contact?interest=volunteering"
+            className="volunteer-btn btn btn-primary"
+          >
             Volunteer With Us
           </Link>
         </div>

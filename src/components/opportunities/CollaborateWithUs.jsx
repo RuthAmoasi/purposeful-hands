@@ -45,7 +45,10 @@ function CollaborateWithUs() {
             </p>
           </div>
         </div>
-        <Link to="/contact" className="collaborate-with-us-btn btn btn-primary">
+        <Link
+          to="/contact?interest=collaboration"
+          className="collaborate-with-us-btn btn btn-primary"
+        >
           Let's Collaborate
         </Link>
       </div>

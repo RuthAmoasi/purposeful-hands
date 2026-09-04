@@ -40,7 +40,10 @@ Thank you!`;
               Order via WhatsApp
             </a>
 
-            <Link to="/contact" className="btn btn-secondary">
+            <Link
+              to="/contact?interest=custom-order"
+              className="btn btn-secondary"
+            >
               Contact Us
             </Link>
           </div>
